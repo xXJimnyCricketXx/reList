@@ -1,0 +1,9 @@
+.env
+data
+dev
+.git
+node_modules
+*.md
+assets
+.github
+unraid-template

@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>reList</Name>
+  <Repository>ghcr.io/xxjimnycricketxx/relist:latest</Repository>
+  <Registry>https://github.com/xXJimnyCricketXx/reList/pkgs/container/relist</Registry>
+  <Network>bridge</Network>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/xXJimnyCricketXx/reList</Support>
+  <Project>https://github.com/xXJimnyCricketXx/reList</Project>
+  <Overview>reList - schreibgeschuetzte, teilbare Ansicht der eigenen rebuy-Wunschliste fuers Heimnetz. Der Container loggt sich mit den eigenen rebuy-Zugangsdaten ein und gleicht die Liste automatisch ab (beim Seitenaufruf und alle 6 Stunden). Nur im LAN betreiben, die Seite hat keinen Login.</Overview>
+  <Category>Tools:</Category>
+  <WebUI>http://[IP]:[PORT:18006]/</WebUI>
+  <TemplateURL>https://raw.githubusercontent.com/xXJimnyCricketXx/reList/main/unraid-template/relist.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/xXJimnyCricketXx/reList/main/assets/readme/relist-icon.png</Icon>
+  <ExtraParams></ExtraParams>
+  <DateInstalled></DateInstalled>
+  <DonateText></DonateText>
+  <DonateLink></DonateLink>
+  <Requires></Requires>
+
+  <Config Name="WebUI Port" Target="18006" Default="18006" Mode="tcp" Description="Port fuer die Weboberflaeche" Type="Port" Display="always" Required="true" Mask="false">18006</Config>
+
+  <Config Name="Appdata" Target="/app/data" Default="/mnt/user/appdata/relist" Mode="rw" Description="Wunschliste, rebuy-Session und Verlauf" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/relist</Config>
+
+  <Config Name="REBUY_EMAIL" Target="REBUY_EMAIL" Default="" Mode="" Description="E-Mail-Adresse des rebuy-Kontos" Type="Variable" Display="always" Required="true" Mask="false"></Config>
+
+  <Config Name="REBUY_PASSWORD" Target="REBUY_PASSWORD" Default="" Mode="" Description="Passwort des rebuy-Kontos - am besten ein Passwort, das sonst nirgends verwendet wird" Type="Variable" Display="always" Required="true" Mask="true"></Config>
+
+  <Config Name="OWNER_NAME" Target="OWNER_NAME" Default="" Mode="" Description="Name in der Ueberschrift: Wunschliste von ..." Type="Variable" Display="always" Required="false" Mask="false"></Config>
+
+  <Config Name="TZ" Target="TZ" Default="Europe/Berlin" Mode="" Description="Zeitzone fuer Logs" Type="Variable" Display="advanced" Required="false" Mask="false">Europe/Berlin</Config>
+
+  <Config Name="PUID" Target="PUID" Default="99" Mode="" Description="Benutzer-ID fuer die Dateien in Appdata (Unraid: 99 = nobody)" Type="Variable" Display="advanced" Required="false" Mask="false">99</Config>
+
+  <Config Name="PGID" Target="PGID" Default="100" Mode="" Description="Gruppen-ID fuer die Dateien in Appdata (Unraid: 100 = users)" Type="Variable" Display="advanced" Required="false" Mask="false">100</Config>
+
+  <Config Name="STALE_MINUTES" Target="STALE_MINUTES" Default="5" Mode="" Description="Seitenaufruf holt frisch von rebuy, wenn der Stand aelter ist (Minuten)" Type="Variable" Display="advanced" Required="false" Mask="false">5</Config>
+
+  <Config Name="REFRESH_INTERVAL_HOURS" Target="REFRESH_INTERVAL_HOURS" Default="6" Mode="" Description="Abgleich im Hintergrund (Stunden)" Type="Variable" Display="advanced" Required="false" Mask="false">6</Config>
+</Container>

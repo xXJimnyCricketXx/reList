@@ -1,0 +1,14 @@
+services:
+  relist:
+    build: .
+    image: relist:local
+    container_name: relist
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      PORT: "18006"
+      DATA_DIR: /app/data
+    ports:
+      - "18006:18006"
+    volumes:
+      - ./data:/app/data

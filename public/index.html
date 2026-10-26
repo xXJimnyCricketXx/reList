@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Wunschliste</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header class="top">
+    <div class="wrap top-inner">
+      <div>
+        <h1><span id="heading">Wunschliste</span> <span id="total" class="total"></span></h1>
+        <p id="updated" class="updated">Lade …</p>
+      </div>
+      <button id="refresh" class="refresh" type="button">Aktualisieren</button>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <div id="error" class="error" hidden></div>
+
+    <section class="tools" aria-label="Filter">
+      <input id="search" type="search" placeholder="Titel, Autor oder Plattform suchen …" aria-label="Suchen">
+      <div class="chips" id="groups" role="group" aria-label="Kategorie"></div>
+      <select id="platform" aria-label="Plattform"><option value="">Alle Plattformen</option></select>
+      <select id="sort" aria-label="Sortierung">
+        <option value="added">Zuletzt hinzugefügt</option>
+        <option value="price-asc">Preis aufsteigend</option>
+        <option value="price-desc">Preis absteigend</option>
+        <option value="title">Titel A–Z</option>
+        <option value="platform">Plattform</option>
+      </select>
+      <label class="check"><input id="instock" type="checkbox"> nur lieferbar</label>
+    </section>
+
+    <p id="count" class="count"></p>
+    <section id="cards" class="cards"></section>
+  </main>
+
+  <footer class="wrap foot">reList · Daten von rebuy.de, Preise und Bestand zum angezeigten Zeitpunkt</footer>
+  <script src="/app.js" defer></script>
+</body>
+</html>

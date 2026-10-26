@@ -1,0 +1,8 @@
+# Zugangsdaten und Laufzeitdaten
+.env
+data/
+
+# Interner Planungsordner (Entwürfe, Dumps der eigenen Wunschliste)
+dev/
+
+node_modules/
