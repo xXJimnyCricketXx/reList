@@ -6,7 +6,7 @@
 
 # reList
 
-### A read-only, shareable view of your own rebuy wishlist for the home network
+### A read-only copy of your rebuy wishlist for everyone in your home network
 
 rebuy wishlists can't be shared or exported. This small, self-hosted Docker container
 logs into your rebuy account, keeps a copy of the wishlist in sync and shows it as a
@@ -34,7 +34,7 @@ clean web page that anyone in your home network can open.
 
 **reList** is a tiny Node.js server that mirrors a personal
 [rebuy.de](https://www.rebuy.de) wishlist and presents it as a read-only page.
-The name is a play on *relist*: the wishlist is listed again, this time shareable. The
+The name is a play on *relist*: the wishlist is listed again, this time visible to others. The
 *re* also stands for buying second-hand.
 
 It was created for a simple household problem: one person collects books and games on
@@ -143,16 +143,13 @@ The image is built by GitHub Actions on every push to `main` and on `v*` tags
 ghcr.io/xxjimnycricketxx/relist:latest
 ```
 
-**1. Make the package public (once, after the first build).** Packages from a private repository start out private. Go to *GitHub → Packages → relist → Package settings → Change visibility → Public*. The repository itself stays private. The image contains only the code: no credentials and no wishlist data.
-
-**2. Install the template.** The raw template URL doesn't work while the repository is private, so copy the template via the Unraid console:
+**1. Install the template.** On the Unraid console:
 
 ```bash
-nano /boot/config/plugins/dockerMan/templates-user/my-reList.xml
-# paste the content of unraid-template/relist.xml and save
+curl -fsSL -o /boot/config/plugins/dockerMan/templates-user/relist.xml https://raw.githubusercontent.com/xXJimnyCricketXx/reList/main/unraid-template/relist.xml
 ```
 
-**3. Create the container.** Go to *Docker → Add Container → Template: reList* and fill in:
+**2. Create the container.** Go to *Docker → Add Container → Template: reList* and fill in:
 
 - `REBUY_EMAIL`
 - `REBUY_PASSWORD`

@@ -2,7 +2,7 @@
   "name": "relist",
   "version": "1.0.0",
   "private": true,
-  "description": "reList - schreibgeschützte, teilbare Ansicht der eigenen rebuy-Wunschliste fürs Heimnetz",
+  "description": "reList - schreibgeschützte Ansicht der eigenen rebuy-Wunschliste fürs Heimnetz",
   "type": "module",
   "scripts": {
     "start": "node src/server.js",

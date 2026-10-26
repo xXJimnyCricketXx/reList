@@ -7,7 +7,7 @@
   <Privileged>false</Privileged>
   <Support>https://github.com/xXJimnyCricketXx/reList</Support>
   <Project>https://github.com/xXJimnyCricketXx/reList</Project>
-  <Overview>reList - schreibgeschuetzte, teilbare Ansicht der eigenen rebuy-Wunschliste fuers Heimnetz. Der Container loggt sich mit den eigenen rebuy-Zugangsdaten ein und gleicht die Liste automatisch ab (beim Seitenaufruf und alle 6 Stunden). Nur im LAN betreiben, die Seite hat keinen Login.</Overview>
+  <Overview>reList - schreibgeschuetzte Ansicht der eigenen rebuy-Wunschliste fuers Heimnetz. Der Container loggt sich mit den eigenen rebuy-Zugangsdaten ein und gleicht die Liste automatisch ab (beim Seitenaufruf und alle 6 Stunden). Nur im LAN betreiben, die Seite hat keinen Login.</Overview>
   <Category>Tools:</Category>
   <WebUI>http://[IP]:[PORT:18006]/</WebUI>
   <TemplateURL>https://raw.githubusercontent.com/xXJimnyCricketXx/reList/main/unraid-template/relist.xml</TemplateURL>
