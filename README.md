@@ -60,7 +60,7 @@ a link to the product on rebuy. Ordering always happens on rebuy itself.
 - **Search, filter and sort** – Free-text search, books/games filter, platform filter, *only available* toggle, sorting by date added, price, title or platform.
 - **"neu" badge** – Items added within the last 14 days are highlighted.
 - **Safe by design** – Read-only. No account data on the page, credentials stay on the server, and the server serves only a fixed set of files.
-- **Data protection** – Empty or incomplete responses are discarded. A sudden drop of more than 30 % is only applied after a second fetch confirms it. The last 10 versions are kept.
+- **Data protection** – Empty or incomplete responses are discarded. A sudden drop of more than 30 % is only applied after a second fetch confirms it. The last 10 versions with changes are kept.
 - **Gentle on rebuy** – The session is reused (about one login per day), at most one fetch per minute, and a 30-minute pause after a failed login.
 - **No dependencies** – Plain Node.js 22, no npm packages, small Alpine image.
 
@@ -157,6 +157,8 @@ curl -fsSL -o /boot/config/plugins/dockerMan/templates-user/relist.xml https://r
 
 Port `18006`, the appdata path `/mnt/user/appdata/relist` and `PUID`/`PGID` `99`/`100` are pre-filled. On start, the container hands the appdata folder over to that user and drops root privileges.
 
+**Updates:** *Docker → Check for Updates*, then apply the update for reList.
+
 <br/><br/>
 
 ## <img src="https://api.iconify.design/lucide/settings.svg?color=%232B6CB0" width="20"> Configuration
@@ -175,7 +177,7 @@ All settings are environment variables: `.env` for Docker Compose, template vari
 | `PORT` | ❌ | `18006` | Port inside the container |
 
 > [!IMPORTANT]
-> The rebuy password is stored in plain text on the server. Use a password you don't use anywhere else. Never commit `.env`.
+> The rebuy password is stored in plain text on the server (in `.env` or the Unraid template). Use a password you don't use anywhere else.
 
 > [!WARNING]
 > The page has no login of its own. Run it **only inside your home network** and don't open the port on your router. For access on the go, use a VPN such as Tailscale or WireGuard.
